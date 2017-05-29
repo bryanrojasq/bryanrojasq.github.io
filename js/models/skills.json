@@ -1,0 +1,25 @@
+var skills = [{
+    "name": "HTML5",
+    "level": 90,
+}, {
+    "name": "CSS3",
+    "level": 85,
+}, {
+    "name": "JS / jQuery / Angular",
+    "level": 85,
+}, {
+    "name": "NodeJS / Express",
+    "level": 70,
+}, {
+    "name": "PHP / Laravel / Codeigniter",
+    "level": 85,
+}, {
+    "name": "Wordpress",
+    "level": 85,
+}, {
+    "name": "MySQL / PostgreSQL",
+    "level": 80,
+}, {
+    "name": "GitHub / Gupl / NPM / Vagrant",
+    "level": 85,
+}];

@@ -1,0 +1,17 @@
+var projects = [{
+    "id": 0,
+    "title": "Project #1",
+    "img_src": "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=250",
+    "video_src": "",
+    "description": "<p>Project #1 Description</p>",
+    "client": "Bryan Rojas",
+    "service": "Web Development"
+}, {
+    "id": 1,
+    "title": "Project #2",
+    "img_src": "https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97150&w=350&h=250",
+    "video_src": "https://www.youtube.com/embed/cJaGsk3e5ME",
+    "description": "<p>Project #2 Description</p>",
+    "client": "Bryan Rojas",
+    "service": "Web Development"
+}];
