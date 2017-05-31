@@ -59,38 +59,97 @@ $(function() {
             // instead of a settings object
         ]
     });
-    var projects = [{
+    var projects = [
+    {
         "id": 0,
+        "title": "Ex2 Outcoding",
+        "img_src": "./img/projects/outcoding.png",
+        "video_src": "",
+        "description": "<p>Website migration to Wordpress, Theme building and site-building.<br> Debug legacy code and website optimization.</p>",
+        "client": "Ex2 Outcoding",
+        "service": "Web Development",
+        'tags' : 'bootstrap, jquery, php, wordpress, theming',
+        'link' : ''
+    }, {
+        "id": 1,
         "title": "Costa Blu Resort",
         "img_src": "./img/projects/costablu.png",
         "video_src": "",
-        "description": "<p>Project #1 Description</p>",
-        "client": "Bryan Rojas",
-        "service": "Web Development"
+        "description": "<p>Website built with Wordpress, Theme building, Plugin building and Site-building.<br> Web design made by the graphic design agency InvaluableCR.</p>",
+        "client": "Sandy Point Resorts",
+        "service": "Web Development",
+        'tags' : 'bootstrap, jquery, php, wordpress, theming',
+        'link' : ''
     }, {
-        "id": 1,
+        "id": 2,
         "title": "CIJULenLínea",
         "img_src": "./img/projects/cijulenlinea.png",
         "video_src": "https://www.youtube.com/embed/gQ-o_j_xvVE",
-        "description": "<p>Project #2 Description</p>",
-        "client": "Bryan Rojas",
-        "service": "Web Development"
+        "description": "<p>Web application developed in PHP using Codeigniter as framework, PostgreSQL and MySLQ as bases of Data, Bootstrap and jQuery for Colegio de Abogados.<br> This project included the automation of processes, Server Administration and DBA and integration with databases.</p>", 
+        "client": "Colegio de Abogados de Costa Rica",
+        "service": "Web Development",
+        'tags' : 'bootstrap, jquery, php, codeigniter, joomla, postgresql, mysql',
+        'link' : ''
     }, {
-        "id": 2,
+        "id": 3,
         "title": "Bosco Mattel",
         "img_src": "./img/projects/boscomattel.png",
         "video_src": "",
-        "description": "<p>Project #2 Description</p>",
-        "client": "Bryan Rojas",
-        "service": "Web Development"
+        "description": "<p>Website built with Wordpress, Theme customization, Site-building.<br> Website optimization.</p>",
+        "client": "Diego Vargas Artist",
+        "service": "Web Development",
+        'tags' : 'bootstrap, jquery, php, wordpress, site-building',
+        'link' : ''
     }, {
-        "id": 3,
-        "title": "Project #2",
-        "img_src": "./img/projects/cijulenlinea.png",
+        "id": 4,
+        "title": "Deportiva Los Ángeles",
+        "img_src": "./img/projects/deportiva-los-angeles.png",
         "video_src": "",
-        "description": "<p>Project #2 Description</p>",
-        "client": "Bryan Rojas",
-        "service": "Web Development"
+        "description": "<p>Website built with Wordpress, Theme customization, Site-building.<br> Website optimization.</p>",
+        "client": "Asociación Deportiva Los Ángeles",
+        "service": "Web Development",
+        'tags' : 'bootstrap, jquery, php, wordpress, theme',
+        'link' : ''
+    }, {
+        "id": 5,
+        "title": "Colegio de Abogados",
+        "img_src": "./img/projects/abogados.png",
+        "video_src": "https://www.youtube.com/embed/RDNEhD8kE6c",
+        "description": "<p>Website Proposal for Colegio de Abogados.<br> Website built with Joomla, Theme customization, Site-building.</p>",
+        "client": "Colegio de Abogados",
+        "service": "Web Development",
+        'tags' : 'css3, mootools, php, joomla, theme',
+        'link' : ''
+    }, {
+        "id": 6,
+        "title": "IUS Doctrina",
+        "img_src": "./img/projects/ius-doctrina.png",
+        "video_src": "https://www.youtube.com/embed/GcYIJkE6aBA",
+        "description": "<p>Website built with Joomla, Theme customization, Site-building.</p>",
+        "client": "Laws Faculty, Universidad de Costa Rica",
+        "service": "Web Development",
+        'tags' : 'css3, jquery, php, joomla, theme',
+        'link' : ''
+    }, {
+        "id": 7,
+        "title": "University Community Work",
+        "img_src": "./img/projects/tcu-ctpmqs.png",
+        "video_src": "https://www.youtube.com/embed/eBvZiLvXGxg",
+        "description": "<p>Website built with Drupal 7, Theme customization, Site-building.</p>",
+        "client": "Mario Quiros High School",
+        "service": "Web Development",
+        'tags' : 'bootstrap, jquery, php, drupal, theme',
+        'link' : ''
+    }, {
+        "id": 8,
+        "title": "Referal Library",
+        "img_src": "./img/projects/biblioteca-abogados.png",
+        "video_src": "https://www.youtube.com/embed/lhIFwo2-A8g",
+        "description": "<p>Website built with Drupal 7, Theme customization, Site-building.</p>",
+        "client": "Colegio de Abogados",
+        "service": "Web Development",
+        'tags' : 'bootstrap, jquery, php, drupal, theme',
+        'link' : ''
     }];
     var htmlProjects = '';
     $.each(projects, function(i, val) {
@@ -156,10 +215,15 @@ $(function() {
         progressWidth: 4
     });
     $(".svg-progress-skill").trigger("redraw");
+
+    var modal = $('#myModal');
+
     $('#myModal').on('hide.bs.modal', function(e) {
         $(this).find('h2').html('');
         $('#myModal').find('p:first').html('');
+        $('#myModal').find('#project-client').html('');
         $('#myModal').find('#media').html('');
+        $('#myModal').find('#project-tags').html('');
         var project = $(this).data('project_id');
         console.log(project);
     });
@@ -170,11 +234,25 @@ $(function() {
         var media = '';
         $('#myModal').find('h2').html(project.title);
         $('#myModal').find('p:first').html(project.description);
+        $('#myModal').find('#project-client').html(project.client);
+        $('#myModal').find('#project-tags').html(project.tags);
+
         if (project.video_src) {
             media += '<div class="video-container"> <iframe width="560" height="315" src="' + project.video_src + '" frameborder="0" allowfullscreen></iframe></div>';
         } else {
             media += '<img alt="' + project.title + '" class="img-responsive" src="' + project.img_src + '"></img>';
         }
         $('#myModal').find('#media').html(media);
+    });
+
+    $('form').on('submit', function(e){
+        e.preventDefault();
+        Email.send("brojask@hotmail.com",
+        "brojask@gmail.com",
+        "This is a subject",
+        "this is the body",
+        "smtp.yourisp.com",
+        "username",
+        "password");
     })
 });

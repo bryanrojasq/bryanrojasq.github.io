@@ -527,3 +527,15 @@ form .btn[type="submit"] {
   width: calc(currentWidth - 20%);
 }
 */
+
+.item-projects figure {
+    position: relative;
+}
+
+.item-projects img {
+    width: 100%;
+    object-fit: cover;
+    height: 290px;
+    /* max-width: 260px; */
+    overflow: hidden;
+}
