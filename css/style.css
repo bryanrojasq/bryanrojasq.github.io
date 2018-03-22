@@ -502,28 +502,14 @@ form .btn[type="submit"] {
   color: #fff;
 }
 
-/*.item-projects {
-  position: relative;
-  overflow: hidden;
-  padding-bottom: 50%; 
+.item-projects figure {
+    position: relative;
 }
 
 .item-projects img {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  margin: auto;
+    width: 100%;
+    object-fit: cover;
+    height: 290px;
+    /* max-width: 260px; */
+    overflow: hidden;
 }
-
-.item-projects {
-  overflow: hidden;
-  width: 50%
-}
-
-.item-projects img {
-  width: 100%;
-  width: calc(currentWidth - 20%);
-}
-*/
