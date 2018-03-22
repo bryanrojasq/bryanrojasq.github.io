@@ -82,7 +82,7 @@ $(function() {
         'link' : ''
     }, {
         "id": 2,
-        "title": "CIJULenLÃ­nea",
+        "title": "CIJULenLínea",
         "img_src": "./img/projects/cijulenlinea.png",
         "video_src": "https://www.youtube.com/embed/gQ-o_j_xvVE",
         "description": "<p>Web application developed in PHP using Codeigniter as framework, PostgreSQL and MySLQ as bases of Data, Bootstrap and jQuery for Colegio de Abogados.<br> This project included the automation of processes, Server Administration and DBA and integration with databases.</p>", 
@@ -102,7 +102,7 @@ $(function() {
         'link' : ''
     }, {
         "id": 4,
-        "title": "Deportiva Los Ãngeles",
+        "title": "Deportiva Los Ángeles",
         "img_src": "./img/projects/deportiva-los-angeles.png",
         "video_src": "",
         "description": "<p>Website built with Wordpress, Theme customization, Site-building.<br> Website optimization.</p>",
